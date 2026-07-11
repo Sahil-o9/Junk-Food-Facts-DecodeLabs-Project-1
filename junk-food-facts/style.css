@@ -1,0 +1,377 @@
+/*==========================================================================
+   1. THEME VARIABLES & BASE FOUNDATIONS
+   ========================================================================== */
+:root {
+  --mocha-mousse: #d27034;  
+  --ethereal-blue: #A0D4E0; 
+  --moonlit-grey: #F2F0EA;  
+  --card-bg: #FFFFFF;
+  --text-dark: #2D2B2A;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  background-color: var(--moonlit-grey);
+  color: var(--text-dark);
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 20px;
+}
+
+/* ==========================================================================
+   2. FIXED LAYOUT BLOCKS (HERO HEADER & NAVIGATION)
+   ========================================================================== */
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tagline { 
+  color: #666; 
+  font-size: 0.95rem; 
+  margin-top: 5px; 
+}
+
+/* Mobile Dropdown Navigation Toggle Framework */
+.section-nav { 
+  display: none; 
+  margin-top: 15px; 
+}
+
+.section-nav.open { 
+  display: block; 
+}
+
+.section-nav ul { 
+  list-style: none; 
+  display: flex; 
+  gap: 15px; 
+  justify-content: center; 
+}
+
+.section-nav a { 
+  text-decoration: none; 
+  color: var(--mocha-mousse); 
+  font-weight: bold; 
+}
+
+/* Filter Controllers Panel */
+nav { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 15px; 
+  margin-bottom: 30px; 
+}
+
+#search-input {
+  width: 100%; 
+  max-width: 400px; 
+  padding: 12px;
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  font-size: 1rem;
+}
+
+#search-input:focus { 
+  outline: 2px solid var(--ethereal-blue); 
+}
+
+.filter-list { 
+  list-style: none; 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+  justify-content: center; 
+}
+
+.filter-btn {
+  background: var(--card-bg); 
+  border: 1px solid #ddd; 
+  padding: 8px 16px;
+  border-radius: 20px; 
+  cursor: pointer; 
+  font-size: 0.9rem;
+}
+
+.filter-btn.active { 
+  background: var(--ethereal-blue); 
+  border-color: var(--ethereal-blue); 
+}
+
+/* ==========================================================================
+   3. RESPONSIVE ARCHITECTURE (MOBILE-FIRST BREAKPOINTS)
+   ========================================================================== */
+main { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 40px; 
+  padding-bottom: 120px; /* Leaves room so content doesn't get hidden under the floating bar */
+}
+
+.card-grid { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 20px; 
+}
+
+/* Responsive Desktop Screen Upgrades */
+@media (min-width: 768px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+  }
+  .section-nav { 
+    display: block; 
+  } 
+  .menu-toggle { 
+    display: none; 
+  }
+}
+
+/* ==========================================================================
+   4. MODULE COMPONENTS (CARDS & BMI APPLICATION)
+   ========================================================================== */
+.food-card {
+  background: var(--card-bg); 
+  padding: 20px; 
+  border-radius: 12px;
+  border-top: 4px solid var(--mocha-mousse);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.food-card.active-selection {
+  border: 2px solid var(--mocha-mousse);
+  background-color: #fff9f5;
+}
+
+/* Image Container Configuration - Keeps images structured safely */
+.card-image {
+  width: 100%;
+  height: 160px; /* Uniform picture height across all food products */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Forces raw image links to clip smoothly without skewing aspect ratios */
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.category-tag { 
+  font-size: 0.8rem; 
+  text-transform: uppercase; 
+  color: #888; 
+  margin-bottom: 15px; 
+}
+
+.stats { 
+  list-style: none; 
+  width: 100%; 
+  border-top: 1px solid #eee; 
+  padding-top: 10px; 
+}
+
+.stats li { 
+  display: flex; 
+  justify-content: space-between; 
+  font-size: 0.9rem; 
+  padding: 4px 0; 
+}
+
+.stat-label { 
+  color: #666; 
+}
+
+.stat-value { 
+  font-weight: bold; 
+}
+
+/* Calculator Block */
+#bmi-calculator {
+  background: var(--card-bg); 
+  padding: 30px; 
+  border-radius: 12px;
+  max-width: 500px; 
+  margin: 0 auto; 
+  width: 100%;
+}
+
+#bmi-calculator form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  margin-top: 15px; 
+}
+
+#bmi-calculator input { 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 6px; 
+}
+
+#bmi-calculator button {
+  background: var(--mocha-mousse); 
+  color: white; 
+  border: none;
+  padding: 12px; 
+  border-radius: 6px; 
+  font-weight: bold; 
+  cursor: pointer;
+}
+
+#bmi-result { 
+  margin-top: 15px; 
+  font-weight: bold; 
+  text-align: center; 
+  color: var(--mocha-mousse); 
+}
+
+/* ==========================================================================
+   5. TERMINAL FOOTER
+   ========================================================================== */
+footer { 
+  text-align: center; 
+  padding: 40px 20px; 
+  color: #777; 
+  font-size: 0.85rem; 
+}
+
+.disclaimer { 
+  font-size: 0.75rem; 
+  margin-top: 5px; 
+  opacity: 0.8; 
+}
+
+/* ==========================================================================
+   6. INTERACTIVE FLOATING TRACKER STYLING
+   ========================================================================== */
+.tracker-summary {
+  display: none;
+  background: var(--card-bg);
+  padding: 15px 25px;
+  border-radius: 16px;
+  border-top: 4px solid var(--mocha-mousse);
+  
+  /* Pins summary box to viewport bottom contextually */
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 700px;
+  z-index: 9999;
+  
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.tracker-summary.visible {
+  display: block;
+}
+
+.summary-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.summary-stats span {
+  color: var(--mocha-mousse);
+  font-size: 1.25rem;
+}
+
+.clear-btn {
+  background: #666;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.clear-btn:hover {
+  background: #444;
+}
+
+/* ==========================================================================
+   7. SCROLL TO TOP ARROW BUTTON STYLING
+   ========================================================================== */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 110px; /* Keeps arrow floating clear above mobile calculator shelf overlays */
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--mocha-mousse);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9998; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+}
+
+.scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.1);
+  background-color: #b55922;
+}
+
+/* Wide Desktop Screens - reposition arrow tightly to bottom corner */
+@media (min-width: 768px) {
+  .scroll-top-btn {
+    bottom: 30px;
+  }
+}

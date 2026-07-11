@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junk Food Facts | DecodeLabs Project 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <h1>Junk Food Facts</h1>
+      <button 
+        type="button" 
+        id="menu-toggle" 
+        class="menu-toggle" 
+        aria-expanded="false" 
+        aria-controls="section-links"
+      >
+        ☰
+      </button>
+    </div>
+    <p class="tagline">Know what's really in your favorite snacks</p>
+
+    <nav id="section-links" class="section-nav">
+      <ul>
+        <li><a href="#food-grid">Food Facts</a></li>
+        <li><a href="#bmi-calculator">BMI Calculator</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav>
+    <input 
+      type="search" 
+      id="search-input" 
+      placeholder="Search foods..."
+      aria-label="Search foods"
+    >
+    <ul class="filter-list">
+      <li><button type="button" class="filter-btn active" data-category="all">All</button></li>
+      <li><button type="button" class="filter-btn" data-category="fast-food">Fast Food</button></li>
+      <li><button type="button" class="filter-btn" data-category="snacks">Snacks</button></li>
+      <li><button type="button" class="filter-btn" data-category="sweets">Sweets</button></li>
+      <li><button type="button" class="filter-btn" data-category="beverages">Beverages</button></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section id="food-grid" class="card-grid">
+
+      <article class="food-card" data-category="fast-food">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80" alt="Gourmet Burger">
+        </div>
+        <h2 class="food-name">Burger</h2>
+        <p class="category-tag">Fast Food</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">350 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">17 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">6 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">520 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="fast-food">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&auto=format&fit=crop&q=80" alt="Crispy French Fries">
+        </div>
+        <h2 class="food-name">French Fries</h2>
+        <p class="category-tag">Fast Food</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">365 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">17 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">0 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">210 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="beverages">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&auto=format&fit=crop&q=80" alt="Cola Beverage">
+        </div>
+        <h2 class="food-name">Cola (330ml)</h2>
+        <p class="category-tag">Beverages</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">140 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">0 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">39 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">45 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="snacks">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400&auto=format&fit=crop&q=80" alt="Potato Chips">
+        </div>
+        <h2 class="food-name">Potato Chips</h2>
+        <p class="category-tag">Snacks</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">160 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">10 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">0.5 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">170 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="sweets">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&auto=format&fit=crop&q=80" alt="Chocolate Bar">
+        </div>
+        <h2 class="food-name">Chocolate Bar</h2>
+        <p class="category-tag">Sweets</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">240 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">13 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">24 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">35 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="fast-food">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&auto=format&fit=crop&q=80" alt="Pizza Slice">
+        </div>
+        <h2 class="food-name">Pizza Slice</h2>
+        <p class="category-tag">Fast Food</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">285 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">10 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">3.6 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">640 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="sweets">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&auto=format&fit=crop&q=80" alt="Glazed Donut">
+        </div>
+        <h2 class="food-name">Donut</h2>
+        <p class="category-tag">Sweets</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">260 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">14 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">12 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">135 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="sweets">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&auto=format&fit=crop&q=80" alt="Ice Cream Cone">
+        </div>
+        <h2 class="food-name">Ice Cream</h2>
+        <p class="category-tag">Sweets</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">273 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">15 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">28 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">80 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="snacks">
+        <div class="card-image">
+          <img src="https://imgs.search.brave.com/JRObGtfdGd1ZBldUd43SWZDRaCoVt-qozcYTpdR4tKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/cG5nLXZlY3Rvci8y/MDI2MDQwNC9vdXJt/aWQvcG5ndHJlZS1k/ZWxpY2lvdXMtc2Ft/b3Nhcy1vbi1hLXBs/YXRlLXBuZy1pbWFn/ZV8xOTA1ODE3Mi53/ZWJw" alt="Crispy Samosa">
+        </div>
+        <h2 class="food-name">Samosa</h2>
+        <p class="category-tag">Snacks</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">260 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">17 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">1 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">420 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="snacks">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&auto=format&fit=crop&q=80" alt="Instant Noodles">
+        </div>
+        <h2 class="food-name">Instant Noodles</h2>
+        <p class="category-tag">Snacks</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">380 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">14 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">3 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">1160 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="fast-food">
+        <div class="card-image">
+          <img src="https://imgs.search.brave.com/rHd9DR1jkq2uBLMFFAHBygMvZnd2uqpKkWA2QNWuT_4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9udXRy/aXNjYW4uYXBwL2Nh/bG9yaWVzLW51dHJp/dGlvbi9pbWFnZXMv/Y2hvbGUtYmhhdHVy/ZS04MjMwYi53ZWJw" alt="Chole Bhature">
+        </div>
+        <h2 class="food-name">Chole Bhature</h2>
+        <p class="category-tag">Fast Food</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">450 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">22 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">2 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">780 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="snacks">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?w=400&auto=format&fit=crop&q=80" alt="Fried Momos">
+        </div>
+        <h2 class="food-name">Fried Momos</h2>
+        <p class="category-tag">Snacks</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">320 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">12 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">1.5 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">610 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="beverages">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=400&auto=format&fit=crop&q=80" alt="Boba Bubble Tea">
+        </div>
+        <h2 class="food-name">Boba Bubble Tea</h2>
+        <p class="category-tag">Beverages</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">290 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">2.5 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">38 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">65 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="snacks">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=400&auto=format&fit=crop&q=80" alt="Cheese Nachos">
+        </div>
+        <h2 class="food-name">Cheese Nachos</h2>
+        <p class="category-tag">Snacks</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">345 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">19 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">1.2 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">490 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="sweets">
+        <div class="card-image">
+          <img src="https://imgs.search.brave.com/ulcX_oD82c4UaDZWqzaXg5u-KhShWfJ3EISm72Ngdzk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9wbmctY2hvY29s/YXRlLXdhZmZsZS1k/ZXNzZXJ0LWZvb2Qt/Y29uZmVjdGlvbmVy/eV81Mzg3Ni03NDQ0/MTQuanBnP3NlbXQ9/YWlzX2h5YnJpZCZ3/PTc0MCZxPTgw" alt="Chocolate Waffle">
+        </div>
+        <h2 class="food-name">Choco Waffle</h2>
+        <p class="category-tag">Sweets</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">310 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">11 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">18 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">240 mg</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card" data-category="beverages">
+        <div class="card-image">
+          <img src="https://imgs.search.brave.com/g4qM8fQ3z7af6HST4MnjYSzeZsqRK6m4BtQIYE4QDhk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE1LzU5LzI0LzM2/LzM2MF9GXzE1NTky/NDM2OTVfMGRqdFp5/OTVpYTRnTnJKMU5n/UThjQTMybTlFMnlR/azUuanBn" alt="Energy Drink">
+        </div>
+        <h2 class="food-name">Energy Drink</h2>
+        <p class="category-tag">Beverages</p>
+        <ul class="stats">
+          <li><span class="stat-label">Calories</span><span class="stat-value">110 kcal</span></li>
+          <li><span class="stat-label">Fat</span><span class="stat-value">0 g</span></li>
+          <li><span class="stat-label">Sugar</span><span class="stat-value">27 g</span></li>
+          <li><span class="stat-label">Sodium</span><span class="stat-value">160 mg</span></li>
+        </ul>
+      </article>
+
+    </section>
+
+    <div id="tracker-summary" class="tracker-summary">
+      <h3>Your Selection Total</h3>
+      <div class="summary-stats">
+        <div>Total Calories: <span id="total-calories">0</span> kcal</div>
+        <div>Total Fat: <span id="total-fat">0</span> g</div>
+        <div>Total Sugar: <span id="total-sugar">0</span> g</div>
+        <div>Total Sodium: <span id="total-sodium">0</span> mg</div>
+      </div>
+      <button type="button" id="clear-tracker" class="clear-btn">Reset Selection</button>
+    </div>
+
+    <section id="bmi-calculator" aria-labelledby="bmi-heading">
+      <h2 id="bmi-heading">BMI Calculator</h2>
+      <p class="bmi-note">A general screening measure — muscle mass, age, and body type are not factored in.</p>
+
+      <form id="bmi-form">
+        <label for="weight-input">Weight (kg)</label>
+        <input type="number" id="weight-input" name="weight" min="1" step="0.1" required>
+
+        <label for="height-input">Height (cm)</label>
+        <input type="number" id="height-input" name="height" min="1" step="0.1" required>
+
+        <button type="submit">Calculate BMI</button>
+      </form>
+
+      <div id="bmi-result" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Junk Food Facts | DecodeLabs Internship Project 1</p>
+    <p class="disclaimer">Nutrition values are approximate averages for informational purposes only.</p>
+  </footer>
+
+  <button type="button" id="scroll-to-top" class="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
