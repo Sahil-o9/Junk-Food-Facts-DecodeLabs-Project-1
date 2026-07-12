@@ -16,5 +16,8 @@ The layout implements a clean, industrial palette requirement:
 * **Highlights & States:** Ethereal Blue (`#A0D4E0`)
 * **Borders & Accents:** Mocha Mousse (`#A8856F`)
 
+## Website Link
+https://sahil-o9.github.io/Junk-Food-Facts-DecodeLabs-Project-1/
+
 ---
 *Developed as part of the DecodeLabs Internship Curriculum. Feel free to clone or explore the source files!*
